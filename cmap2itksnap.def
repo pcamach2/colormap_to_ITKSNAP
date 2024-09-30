@@ -1,0 +1,11 @@
+Bootstrap: docker
+From: python:3.9-slim
+
+%files
+    . /opt/cmap_to_itksnap
+
+%environment
+    export PATH=$PATH:/opt/cmap_to_itksnap
+
+%runscript
+    exec python /opt/cmap_to_itksnap/run_ColorMap.py
